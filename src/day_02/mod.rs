@@ -25,8 +25,7 @@ struct Round {
 
 fn run_strategy(input: &str, f: fn(&str) -> Round) -> u32 {
     input
-        .split('\n')
-        .filter(|l| !l.is_empty())
+        .lines()
         .map(f)
         .collect::<Vec<Round>>()
         .iter()
